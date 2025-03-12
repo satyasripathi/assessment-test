@@ -3,10 +3,10 @@
 ## 🚀 Overview
 This project sets up a real-time streaming pipeline** using Kafka & Docker to process user login data.
 
-🛠️ Tech Stack
-Kafka (Data streaming)
-Docker (Containerization)
-Python (Consumer & Producer)
+🛠️ Tech Stack:
+1. Kafka (Data streaming)
+2. Docker (Containerization)
+3. Python (Consumer & Producer)
 
 ## 📦 Setup
 
