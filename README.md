@@ -101,19 +101,17 @@ Modify your Kafka consumer (e.g., consumer.py) to connect to Azure Event Hubs.
 
 2.What other components would you want to add to make this production ready?
 
-Add Schema Validation with Confluent Schema Registry: Enforce data schema validation to avoid bad or missing data with Avro/JSON Schema.
-Store Processed Data in a Data Lake (S3, Snowflake, ADLS).
-Implement Authentication (SASL, TLS) for security.
-Use Role-Based Access Control (RBAC): Restrict who can produce/consume messages.
-CI/CD & Infrastructure Automation:
-Use GitHub Actions or Jenkins/Teamscity for automated builds & deployments.
+1. Add Schema Validation with Confluent Schema Registry: Enforce data schema validation to avoid bad or missing data with Avro/JSON Schema.
+2. Store Processed Data in a Data Lake (S3, Snowflake, ADLS).
+3. Implement Authentication (SASL, TLS) for security.
+4. Use Role-Based Access Control (RBAC): Restrict who can produce/consume messages.
+5. CI/CD & Infrastructure Automation: Use GitHub Actions or Jenkins/Teamscity for automated builds & deployments.
 
 3.How can this application scale with a growing dataset?
 
-Kafka-Level Scaling:
-Increase Kafka Partitions, allowing multiple consumers to process data in parallel.
-Consumer Scaling:
-Increase Consumer Instances:
-Kafka uses Consumer Groups to distribute workload across multiple consumers. Run multiple consumer instances for load balancing.
-Use multi-threading for faster execution.
+1. Kafka-Level Scaling: Increase Kafka Partitions, allowing multiple consumers to process data in parallel.
+2. Consumer Scaling: Increase Consumer Instances:
+3. Kafka uses Consumer Groups to distribute workload across multiple consumers. Run multiple consumer instances for load balancing.
+4. Use multi-threading for faster execution.
+
 There are many more optimzation techniques for handling large data sets enabling faster and efficient processing.
