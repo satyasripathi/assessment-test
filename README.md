@@ -13,8 +13,8 @@ Tech Stack:
 1. git clone on your os terminal using command --> git clone https://github.com/satyasripathi/assessment_test.git
 2. Run command to get current working directory on terminal--> pwd
 3. Navigate to git project root directory --> cd (project location)
-4. python -m venv kafka_env (create python virtual env to install modules)
-5. source kafka_env/bin/activate (activate virtual env)
+4. python -m venv kafka_env (create pythons virtual env to install modules)
+5. source kafka_env/bin/activate (activates virtual env)
 6. pip install confluent-kafka (By default module gets installed in Python site-packages directory. Make sure module is placed in project dir, if not you run into 'no module found error'. Manually copy module from site-pacakages dir to project directory).
 
 
@@ -110,8 +110,7 @@ Modify your Kafka consumer (e.g., consumer.py) to connect to Azure Event Hubs.
 3.How can this application scale with a growing dataset?
 
 1. Kafka-Level Scaling: Increase Kafka Partitions, allowing multiple consumers to process data in parallel.
-2. Consumer Scaling: Increase Consumer Instances:
-3. Kafka uses Consumer Groups to distribute workload across multiple consumers. Run multiple consumer instances for load balancing.
-4. Use multi-threading for faster execution.
+2. Consumer Scaling: Increase Consumer Instances: Kafka uses Consumer Groups to distribute workload across multiple consumers. Run multiple consumer instances for load balancing.
+3. Use multi-threading for faster execution.
 
 There are many more optimzation techniques for handling large data sets enabling faster and efficient processing.
