@@ -37,10 +37,11 @@ Note: user-login topic is created and data is generated from docker image mprade
 Note: Processed-user-logic topic has some etl logic where timestamp field is converted to yyyy-mm-dd . Also filtered only android type devices by flagging out latest app versions.
 
 kafka topic Topic should look like below:
- original topic data (user-login):
+
+original topic data (user-login):
 {"user_id": "4a381a71-5a66-4288-b2f8-7935c19aa7f3", "app_version": "2.3.0", "ip": "80.222.149.199", "locale": "CO", "device_id": "798f2ad2-d955-4152-adef-e6e54a979b63", "timestamp": 1741724761, "device_type": "android"}
 
- transformed data (Processed-user-logic topic):
+transformed data (Processed-user-logic topic):
 {'user_id': 'd7bcc71e-a4f3-4c4f-8afd-85a6a7dc59ae', 'app_version': '2.3.0', 'ip': '65.43.155.15', 'locale': 'AR', 'device_id': 'd03b36c2-bc44-4826-aa58-8120e0b6834b', 'timestamp': '2025-03-11 20:14:16', 'device_type': 'android', 'outdated_version': True}
 
 post validation steps:
@@ -66,7 +67,7 @@ Using cloud technologies like AWS MSK (Managed Streaming for Apache Kafka) or Az
 
 Example if using Azure event hub:
 
-1.Create an Azure Event Hub Namespace
+1. Create an Azure Event Hub Namespace
 Go to the Azure Portal → Azure Event Hubs
 Click Create a resource → Search for Event Hubs
 Click Create, then:
@@ -81,22 +82,18 @@ Go to Event Hubs →
 Enter a name for your Event Hub (e.g., user-login).
 Click Create.
 
-3.Get the Kafka Connection String
+3. Get the Kafka Connection String
 Go to Event Hub Namespace → Shared Access Policies.
 Click on RootManageSharedAccessKey.
 Copy the Connection String - Primary Key (needed for Kafka clients).
 
-4.Update Your Docker Compose to Use Azure Event Hub
+4. Update Your Docker Compose to Use Azure Event Hub
 Modify your docker-compose.yml file to use Azure Event Hubs instead of a local Kafka broker.
 
 5. Update Kafka Consumer Code
 Modify your Kafka consumer (e.g., consumer.py) to connect to Azure Event Hubs.
 
-Next Steps
-Connect Event Hub to Azure Data Lake or Azure Functions for further processing.
-Deploy the Kafka producer in Docker as well.
-
-6.Deploy the Kafka Containers
+6. Deploy the Kafka Containers
 
 2.What other components would you want to add to make this production ready?
 Add Schema Validation with Confluent Schema Registry: Enforce data schema validation to avoid bad or missing data with Avro/JSON Schema.
