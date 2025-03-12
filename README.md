@@ -48,7 +48,7 @@ Execution steps:
 
  Post validation steps:
  To list kafka topics created,
- 1. docker exec -it kafka kafka-topics --list --bootstrap-server localhost:29092 (to see topics created in kafka)
+ 1. docker exec -it kafka kafka-topics --list --bootstrap-server localhost:29092 (to see topics created in kafka).
  output should be generated as : user-login, processed-user-login
 
  2. To view streaming data in the topic, run the command,
