@@ -38,13 +38,13 @@ Execution steps:
 
    Note: Processed-user-logic topic has some etl logic where timestamp field is converted to yyyy-mm-dd . Also filtered only android type devices by flagging out latest app versions.
 
-  kafka topic Topic should look like below:
+   kafka topic Topic should look like below:
 
-  original topic data (user-login):
-  {"user_id": "4a381a71-5a66-4288-b2f8-7935c19aa7f3", "app_version": "2.3.0", "ip": "80.222.149.199", "locale": "CO", "device_id": "798f2ad2-d955-4152-adef-e6e54a979b63", "timestamp": 1741724761, "device_type": "android"}
+   original topic data (user-login):
+   {"user_id": "4a381a71-5a66-4288-b2f8-7935c19aa7f3", "app_version": "2.3.0", "ip": "80.222.149.199", "locale": "CO", "device_id": "798f2ad2-d955-4152-adef-e6e54a979b63", "timestamp": 1741724761, "device_type": "android"}
 
-  transformed data (Processed-user-logic topic):
-  {'user_id': 'd7bcc71e-a4f3-4c4f-8afd-85a6a7dc59ae', 'app_version': '2.3.0', 'ip': '65.43.155.15', 'locale': 'AR', 'device_id': 'd03b36c2-bc44-4826-aa58-8120e0b6834b', 'timestamp': '2025-03-11 20:14:16', 'device_type': 'android', 'outdated_version': True}
+   transformed data (Processed-user-logic topic):
+   {'user_id': 'd7bcc71e-a4f3-4c4f-8afd-85a6a7dc59ae', 'app_version': '2.3.0', 'ip': '65.43.155.15', 'locale': 'AR', 'device_id': 'd03b36c2-bc44-4826-aa58-8120e0b6834b', 'timestamp': '2025-03-11 20:14:16', 'device_type': 'android', 'outdated_version': True}
 
  Post validation steps:
  To list kafka topics created,
