@@ -13,13 +13,12 @@ Python (Consumer & Producer)
 1. git clone on your os terminal using command --> git clone https://github.com/satyasripathi/assessment_test.git
 2. Run command to get current working directory on terminal--> pwd
 3. Navigate to git project root directory --> cd (project location)
-4.python -m venv kafka_env (create python virtual env to install modules)
-5.source kafka_env/bin/activate (activate virtual env)
+4. python -m venv kafka_env (create python virtual env to install modules)
+5. source kafka_env/bin/activate (activate virtual env)
 
 Docker installation:
-Mac: 
-brew install --cask docker 
-Windows:
+1. Mac users: brew install --cask docker 
+2. Windows users:
 Go to Docker’s official website and download Docker Desktop for Windows.
 Install Docker Desktop
 Run the downloaded installer and follow the installation steps.
