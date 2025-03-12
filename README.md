@@ -26,19 +26,19 @@ Run the downloaded installer and follow the installation steps.
 
 Execution steps:
 1. docker-compose up -d (starts Kafka and zookeeper using Docker)
-Note: the above command runs based on docker-compose.yml file.
+ Note: the above command runs based on docker-compose.yml file.
 2. docker ps (Check if the containers are running)
 
 Note: user-login topic is created and data is generated from docker image mpradeep954/fetch-de-data-gen 
 
-3.Run Python script (consumer.py) that consumes data from user-login topic, processes it, and publishes to new topic processed-user-login topic
+3.Run Python script (consumer.py): This consumes data from user-login topic, processes it, and publishes to new topic processed-user-login topic
 
 
 Note: Processed-user-logic topic has some etl logic where timestamp field is converted to yyyy-mm-dd . Also filtered only android type devices by flagging out latest app versions.
 
-Topic data should look like below:
-original msg data:
-Produced message: {"user_id": "4a381a71-5a66-4288-b2f8-7935c19aa7f3", "app_version": "2.3.0", "ip": "80.222.149.199", "locale": "CO", "device_id": "798f2ad2-d955-4152-adef-e6e54a979b63", "timestamp": 1741724761, "device_type": "android"}
+kafka topic Topic should look like below:
+original topic data (user-login):
+{"user_id": "4a381a71-5a66-4288-b2f8-7935c19aa7f3", "app_version": "2.3.0", "ip": "80.222.149.199", "locale": "CO", "device_id": "798f2ad2-d955-4152-adef-e6e54a979b63", "timestamp": 1741724761, "device_type": "android"}
 
 transformed data (Processed-user-logic topic):
 {'user_id': 'd7bcc71e-a4f3-4c4f-8afd-85a6a7dc59ae', 'app_version': '2.3.0', 'ip': '65.43.155.15', 'locale': 'AR', 'device_id': 'd03b36c2-bc44-4826-aa58-8120e0b6834b', 'timestamp': '2025-03-11 20:14:16', 'device_type': 'android', 'outdated_version': True}
