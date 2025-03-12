@@ -3,12 +3,12 @@
 ## 🚀 Overview
 This project sets up a real-time streaming pipeline** using Kafka & Docker to process user login data.
 
-🛠️ Tech Stack:
+Tech Stack:
 1. Kafka (Data streaming)
 2. Docker (Containerization)
 3. Python (Consumer & Producer)
 
-## 📦 Setup
+## Setup
 
 1. git clone on your os terminal using command --> git clone https://github.com/satyasripathi/assessment_test.git
 2. Run command to get current working directory on terminal--> pwd
@@ -36,7 +36,7 @@ Execution steps:
 3. Run Python script (consumer.py): This consumes data from user-login topic, processes it, and publishes to new topic processed-user-login topic
 
 
-   Note: Processed-user-logic topic has some etl logic where timestamp field is converted to yyyy-mm-dd . Also filtered only android type devices by flagging out latest app versions.
+   Note: Processed-user-logic topic has etl logic where unix timestamp field is converted to yyyy-mm-dd . Also filtered only android type devices by flagging out latest app versions.
 
    kafka topics should look like below:
 
