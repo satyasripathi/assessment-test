@@ -46,7 +46,7 @@ Execution steps:
   transformed data (Processed-user-logic topic):
   {'user_id': 'd7bcc71e-a4f3-4c4f-8afd-85a6a7dc59ae', 'app_version': '2.3.0', 'ip': '65.43.155.15', 'locale': 'AR', 'device_id': 'd03b36c2-bc44-4826-aa58-8120e0b6834b', 'timestamp': '2025-03-11 20:14:16', 'device_type': 'android', 'outdated_version': True}
 
- post validation steps:
+ Post validation steps:
  To list kafka topics created,
  1. docker exec -it kafka kafka-topics --list --bootstrap-server localhost:29092 (to see topics created in kafka)
  output should be generated as : user-login, processed-user-login
